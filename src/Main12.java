@@ -5,7 +5,7 @@ import java.util.Scanner;
 /* 연산자 끼워넣기 */
 
 public class Main12 {
-	private static int max = 0;
+	private static int max = -1111111111;
 	private static int min = 1111111111;
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
@@ -34,7 +34,7 @@ public class Main12 {
 	}	
 	
 	private static void maxAndMin(int[] aArr, int[] operArr, int depth, int sum) {
-		
+		int tmp = 0;
 		if(depth == aArr.length-1) {
 			updateMaxAndMin(sum);
 			return;
@@ -46,6 +46,7 @@ public class Main12 {
 				continue;
 			
 			operArr[i] = operArr[i]-1;
+			tmp = sum;
 			switch (i) {
 				case 0 : sum += aArr[depth+1];
 				break;
@@ -58,8 +59,11 @@ public class Main12 {
 			};
 			
 			maxAndMin(aArr, operArr, depth+1, sum);
+			sum = tmp;
 			operArr[i] = operArr[i]+1;
-			sum = aArr[0];
+			
+			if(depth == 0)
+				sum = aArr[0];
 		}
 	}
 	

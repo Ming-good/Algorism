@@ -1,3 +1,5 @@
+package before;
+
 import java.util.Scanner;
 /* 쉽게 문제 풀기 */
 

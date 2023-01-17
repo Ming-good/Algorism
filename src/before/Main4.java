@@ -1,3 +1,5 @@
+package before;
+
 import java.util.Scanner;
 /* 백준 피보나치 수열
  * 

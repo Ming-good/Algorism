@@ -1,3 +1,5 @@
+package before;
+
 import java.util.Scanner;
 /* 백준 지혜의 지하철 (지하철에 탑승 고객이 가장 많을 때 수를 구하는 문제)
  * 

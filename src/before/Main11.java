@@ -1,3 +1,5 @@
+package before;
+
 import java.io.IOException;
 import java.util.Scanner;
 /* ¼Ò¼ö */

@@ -1,3 +1,5 @@
+package before;
+
 import java.io.IOException;
 import java.util.Scanner;
 /* 소수찾기 */

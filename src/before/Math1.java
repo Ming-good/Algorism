@@ -1,3 +1,5 @@
+package before;
+
 import java.util.Scanner;
 
 /** 소수를 찾아라 */

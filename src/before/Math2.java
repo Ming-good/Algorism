@@ -1,3 +1,5 @@
+package before;
+
 import java.util.Scanner;
 
 /** 소수의 합, 최솟값 구하기 */

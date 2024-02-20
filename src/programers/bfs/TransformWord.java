@@ -31,31 +31,26 @@ public class TransformWord {
     }
 
     private int BFS(String begin, String target, String[] words) {
-        int cnt = -1;
-
+        Node node = new Node(begin, 0);
         boolean[] visit = new boolean[words.length];
-        Queue<String> que = new LinkedList<String>();
-        que.offer(begin);
+        Queue<Node> que = new LinkedList<Node>();
+        que.offer(node);
 
         while (!que.isEmpty()) {
-            cnt++;
             int size = que.size();
-            for (int z = 0; z < size; z++ ) {
-                String word = que.poll();
-                if (word.equals(target)) {
-                    break;
+            node = que.poll();
+            if (node.word.equals(target)) {
+                break;
+            }
+            for (int i = 0; i < words.length; i++) {
+                if (checkTranform(node.word, words[i]) != 1 || visit[i]) {
+                    continue;
                 }
-                for (int i = 0; i < words.length; i++) {
-                    if (checkTranform(word, words[i]) != 1 || visit[i]) {
-                        continue;
-                    }
-                    que.offer(words[i]);
-                    visit[i] = true;
-                }
+                que.offer(new Node(words[i], node.depth + 1));
+                visit[i] = true;
             }
         }
-
-        return cnt;
+        return node.depth;
     }
 
     private int checkTranform(String begin, String words) {
@@ -66,5 +61,14 @@ public class TransformWord {
             }
         }
         return cnt;
+    }
+
+    static class Node{
+        String word;
+        int depth;
+        public Node(String word, int depth) {
+            this.word = word;
+            this.depth = depth;
+        }
     }
 }

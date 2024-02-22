@@ -35,14 +35,14 @@ public class TargetNumber {
 
         return cnt;
     }
-}
 
-class Node {
-    int depth;
-    int value;
+    static class Node {
+        int depth;
+        int value;
 
-    public Node(int depth, int value) {
-        this.depth = depth;
-        this.value = value;
+        public Node(int depth, int value) {
+            this.depth = depth;
+            this.value = value;
+        }
     }
 }

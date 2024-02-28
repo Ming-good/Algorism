@@ -17,10 +17,10 @@ public class GetItem {
         int[] character = {characterX, characterY};
         int[] item = {itemX, itemY};
 
-        return DFS(rectangle, character, item)/2;
+        return BFS(rectangle, character, item)/2;
     }
 
-    private int DFS(int[][] rectangle, int[] character, int[] item) {
+    private int BFS(int[][] rectangle, int[] character, int[] item) {
         boolean[][] visit = new boolean[101][101];
         character[0] = character[0]*2;
         character[1] = character[1]*2;

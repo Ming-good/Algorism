@@ -1,4 +1,4 @@
-package programers.bfs;
+package programers.dfs;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,16 +15,16 @@ public class TravelRoute {
         String[][] tikets = {{"ICN", "AAA"}, {"ICN", "CCC"}, {"CCC", "DDD"}, {"AAA", "BBB"}, {"AAA", "BBB"}, {"DDD", "ICN"}, {"BBB", "AAA"}};
         System.out.println(Arrays.toString(travelRoute.solution(tikets)));
     }
+    private static Stack<String> stack = new Stack<>();
+    private static Set<String> visitSet = new HashSet<>();
     public String[] solution(String[][] tickets) {
-        Set<String> visitSet = new HashSet<>();
-        Stack<String> stack = new Stack<>();
+
         stack.add("ICN");
-        return DFS(tickets, visitSet, "ICN", stack);
+        return DFS(tickets, "ICN");
     }
 
-    private String[] DFS(String[][] tickets, Set<String> visitSet, String start, Stack<String> stack) {
+    private String[] DFS(String[][] tickets, String start) {
         String[] answer = null;
-        System.out.println(stack.size());
         if (stack.size() == tickets.length + 1) {
             return stack.toArray(new String[0]);
         }
@@ -41,7 +41,7 @@ public class TravelRoute {
         for (int i = 0; i < list.size(); i++) {
             visitSet.add(list.get(i));
             stack.add(list.get(i).substring(0, 3));
-            answer = DFS(tickets, visitSet, list.get(i).substring(0, 3), stack);
+            answer = DFS(tickets, list.get(i).substring(0, 3));
             stack.pop();
             visitSet.remove(list.get(i));
             if (answer != null && answer.length == tickets.length + 1) {

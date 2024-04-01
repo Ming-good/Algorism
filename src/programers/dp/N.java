@@ -18,13 +18,13 @@ public class N {
         for (int i = 0; i < 8; i++) {
             nn=(nn*10)+N;
             if(nn == number) return i+1;
-            HashSet<Integer> map = new HashSet<>();
+
+            HashSet<Integer> map = new HashSet<>(1);
             map.add(nn);
+
             list.add(map);
 
-            if (findNumAndCal(list, N, number, i + 1)) {
-                return i+1;
-            }
+            if (findNumAndCal(list, N, number, i + 1)) return i+1;
         }
 
         return -1;
@@ -35,7 +35,7 @@ public class N {
         int right = depth-left;
 
         Set<Integer> fxc = fx.get(depth-1);
-        while(left<depth && right>0 && fx.size()>left && fx.size()>right){
+        while(left<depth && right>0 && left>0){
             Set<Integer> fxa = fx.get((left++)-1);
             Set<Integer> fxb = fx.get((right--)-1);
 

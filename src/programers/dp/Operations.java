@@ -1,9 +1,11 @@
 package programers.dp;
 
+import java.util.Arrays;
+
 public class Operations {
 
     public static void main(String[] args) {
-        String arr[] = {"1", "-", "3", "-", "5", "-", "8"};
+        String arr[] = {"5", "-", "10", "+", "1", "+", "2", "-", "4"};
         Operations operations = new Operations();
 
         System.out.println(operations.solution(arr));
@@ -33,21 +35,30 @@ public class Operations {
                     continue;
                 }
                 int depth = i;
-                int maxRight = dpArr[j + 1] < 0 ? -Math.abs(max[i - 1][j + 1]) : max[i - 1][j + 1];
-                int maxLeft = Math.abs(max[i - 1][j]);
+                int maxRight = max[i - 1][j + 1];
+                int maxLeft = max[i - 1][j];
                 int minRight = min[i-1][j+1];
                 int minLeft = min[i-1][j];
 
+                int[] valArr = new int[8];
+
                 int maxLeftVal = maxLeft + dpArr[j + depth];
-                if (maxLeftVal < 0) {
-                    maxLeftVal = -maxLeftVal;
-                }
+                int maxRightVal = Math.abs(dpArr[j]) + maxRight;
+                int minLeftVal = Math.abs(minLeft) + dpArr[j + depth];
+                int minRightVal = Math.abs(dpArr[j]) + minRight;
 
-                max[i][j] = Math.max(maxLeftVal<0?-maxLeftVal:maxLeftVal, dpArr[j] + maxRight);
-                min[i][j] = Math.min(minLeft + dpArr[j + depth], dpArr[j] + minRight);
+                valArr[0] =  maxLeftVal;
+                valArr[1] = dpArr[j]<0? -maxRightVal : maxRightVal;
+                valArr[2] = minLeft < 0 ? -minLeftVal : minLeftVal;
+                valArr[3] = dpArr[j]<0? -minRightVal : minRightVal;
+                valArr[4]=maxLeft + dpArr[j + depth];
+                valArr[5]=dpArr[j] + maxRight;
+                valArr[6]=minLeft + dpArr[j + depth];
+                valArr[7]=dpArr[j] + minRight;
 
-                max[i][j] = Math.max(max[i][j], min[i][j]);
-                min[i][j] = Math.min(max[i][j], min[i][j]);
+                max[i][j] = Arrays.stream(valArr).summaryStatistics().getMax();
+                min[i][j] = Arrays.stream(valArr).summaryStatistics().getMin();
+
             }
         }
 

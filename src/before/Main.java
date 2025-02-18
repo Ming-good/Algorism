@@ -3,7 +3,7 @@ package before;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-/* ¹éÁØ ¾à¼ö ±¸ÇÏ±â
+/* ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
  * 
  * */
 

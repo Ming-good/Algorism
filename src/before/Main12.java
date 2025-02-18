@@ -3,8 +3,7 @@ package before;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
-/* ¿¬»êÀÚ ³¢¿ö³Ö±â */
+/* ì—°ì‚°ì ë¼ì›Œë„£ê¸° */
 
 public class Main12 {
 	private static int max = -1111111111;

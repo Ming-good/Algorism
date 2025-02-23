@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* N¹øÂ° Å« ¼ö */
+/* Në²ˆì§¸ í° ìˆ˜ */
 
 public class Main7 {
 	public static void main(String[] args) throws NumberFormatException, IOException {

@@ -1,4 +1,4 @@
-package before;
+package before.recursion;
 
 import java.io.BufferedReader;
 import java.io.IOException;

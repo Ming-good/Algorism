@@ -8,8 +8,9 @@ import java.util.Stack;
 
 public class Test {
 	public static void main(String[] args) throws InterruptedException, IOException {
+		System.out.println(1+""+2);
 
-		System.out.println(1<<1);
-
+		String s = "12";
+		System.out.println(s.split("")[0]);
 	}
 }

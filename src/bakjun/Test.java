@@ -1,12 +1,15 @@
 package bakjun;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.PriorityQueue;
 
 public class Test {
 	public static void main(String[] args) throws InterruptedException, IOException {
-		char a= '1';
-		a = '1' - '0' + '0';
-		System.out.println(a);
+		List<Integer>[] listArr = new ArrayList[1001];
+		listArr[2].add(1);
 
 	}
 

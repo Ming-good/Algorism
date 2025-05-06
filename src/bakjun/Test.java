@@ -8,8 +8,10 @@ import java.util.PriorityQueue;
 
 public class Test {
 	public static void main(String[] args) throws InterruptedException, IOException {
-		List<Integer>[] listArr = new ArrayList[1001];
-		listArr[2].add(1);
+		int l = 3;
+		int distance = 5;
+		int cnt = l * ((distance + l - 1) / l);
+		System.out.println(cnt);
 
 	}
 

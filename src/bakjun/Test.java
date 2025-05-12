@@ -3,15 +3,19 @@ package bakjun;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 
 public class Test {
 	public static void main(String[] args) throws InterruptedException, IOException {
-		int l = 3;
-		int distance = 5;
-		int cnt = l * ((distance + l - 1) / l);
-		System.out.println(cnt);
+		LinkedList<Integer> a = new LinkedList<>();
+		a.offer(1);
+		a.offer(2);
+		a.offer(3);
+		a.remove(1);
+
 
 	}
 

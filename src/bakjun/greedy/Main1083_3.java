@@ -3,7 +3,6 @@ package bakjun.greedy;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class Main1083_3 {
 

@@ -1,4 +1,4 @@
-package bakjun;
+package bakjun.etc;
 
 import java.util.ArrayList;
 import java.util.Collections;

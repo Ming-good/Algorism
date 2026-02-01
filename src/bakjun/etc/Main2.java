@@ -1,4 +1,4 @@
-
+package bakjun.etc;
 
 import java.util.Scanner;
 

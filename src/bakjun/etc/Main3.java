@@ -1,4 +1,4 @@
-package bakjun;
+package bakjun.etc;
 
 import java.util.Scanner;
 /* ���� ������ ����ö (����ö�� ž�� ���� ���� ���� �� ���� ���ϴ� ����)

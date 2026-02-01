@@ -1,4 +1,4 @@
-package bakjun;
+package bakjun.etc;
 
 import java.io.IOException;
 import java.util.Scanner;

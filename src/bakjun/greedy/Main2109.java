@@ -29,12 +29,9 @@ public class Main2109 {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 
         for (int i = 0; i < n; i++) {
-            int cur = dp[i][1];
-            for (int j = i; j<n&&cur==dp[j][1]; i=j++) {
-                pq.add(dp[j][0]);
-                if (pq.size() > cur || pq.size() > n) {
-                    pq.poll();
-                }
+            pq.add(dp[i][0]);
+            if (pq.size() > dp[i][1]) {
+                pq.poll();
             }
         }
         Integer sum = pq.stream().reduce(0, (a, b) -> a + b);
